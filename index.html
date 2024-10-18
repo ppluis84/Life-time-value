@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Modelo Life Time Value</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <!--MENU ENCABEZADO-->
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="https://ppluis84.github.io/Portafolio/" target="_blank">José Luis</a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="https://ppluis84.github.io/Portafolio/#inicio" onclick="seleccionar()">INICIO</a></li>
+                    <li><a href="https://ppluis84.github.io/Portafolio/#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
+                    <li><a href="https://ppluis84.github.io/Portafolio/#skills" onclick="seleccionar()">SKILLS</a></li>
+                    <li><a href="https://ppluis84.github.io/Portafolio/#curriculum" onclick="seleccionar()">CURRICULUM</a>
+                    </li>
+                    <li><a href="https://ppluis84.github.io/Portafolio/#portfolio" onclick="seleccionar()">PORTFOLIO</a>
+                    </li>
+                    <li><a href="https://ppluis84.github.io/Portafolio/#contacto" onclick="seleccionar()">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+    <br><br>
+    <!--SECCION INICIO-->
+    <div id="inicio" class="inicio">
+        <div class="contenido">
+            <h1>Construcción de modelos Life Time Value (Python)</h1>
+            <br>
+            <p>Este modelo segmenta una base de datos de clientes, para ayudar al retailer a mejorar sus resultados desarrollando sus diferentes tipologías de clientes.</p>
+        </div>
+    </div>
+    <!--SECCION RESUMEN-->
+    <div class="resumen">
+        <h2>Construcción de modelos Life Time Value (Python)</h2>
+        <p class="fecha">Febrero de 2024</p>
+        <h3>Resumen:</h3>
+        <p class="descripcion">Este proyecto es un modelo de segementación de una base de datos de clientes de un negocio de retailer, el modelo de negocio gira en torno a la venta de biciclétas, el objetivo es ayudar a mejorar sus resultados desarrollando sus diferentes tipologías de clientes en un modelo Life Time Value.</p>
+        <br>
+        <img src="img/p1.png" alt="Flujo de trabajo">
+    </div>
+       <!--SECCION EXPLORACION DE LOS DATOS-->
+    <div class="seccion">
+        <div class="contenedor">
+            <div class="texto">
+                <h3>Exploración de los datos</h3>
+                <p class="descripcion">La información pertenece a una empresa de retailer enfocada en la venta de bicicletas y sus 
+                    accesorios, utilizamos dos tablas, una de las ventas y las variables principales son la fecha de la compra, el 
+                    precio del artículo, la cantidad de artículos comprados y el monto total de la compra, la segunda tabla tiene el 
+                    tipo de clientes y la actividad del cliente (Activo - Inactivo), estas tienen una variable común que es 
+                    'CUSTOMER ID' y nos servirá para hacer un cruce entre las tablas.</p>
+            </div>
+            <img src="img/p2.png" alt="Imagen descriptiva">
+        </div>
+    </div>
+        </div>
+       <!--SECCION CONSTRUCCION DE INDICADORES-->
+    <div class="seccion">
+        <div class="contenedor">
+            <div class="texto">
+                <h3>Construcción de indicadores</h3>
+                <p class="descripcion">Realizamos una copia de la tabla principal, damos el formato correcto a la variable fecha, luego 
+                    extraemos el año que nos servirá para calcular el año en el que el cliente inicio su actividad en la empresa y el 
+                    final, luego calculamos un porcentaje de ganancia en un 40% que se puede ser ajustable, con estos datos podemos 
+                    obtener la contribución del cliente a la empresa, finalmente mediante la formula obtenemos el valor del cliente 
+                    en el tiempo (PCV Past Customer Value).</p>
+            </div>
+            <img src="img/p3.png" alt="Imagen descriptiva">
+        </div>
+    </div>
+    <!-- SECCION ELABORACION DE LIFE TIME VALUE -->
+    <div class="seccion">
+        <div class="contenedor">
+            <div class="texto">
+                <h3>Elaboración de Life Time Value</h3>
+                <p class="descripcion">Reducimos la tabla principal agrupándola por cliente, por lo tanto, si un cliente ocupa 10 
+                    filas en la tabla, ahora ocupa una sola y el resto de las variables identifican su perfil ce compra, luego 
+                    clasificamos en quintiles el valor del cliente (PCV), finalmente cruzamos esta tabla con la de tipología del 
+                    cliente, con esto los criterios de evaluación para el análisis final quedan listos..</p>
+                </div>
+            <img src="img/p4.png" alt="Imagen descriptiva">
+        </div>
+    </div>
+    <!-- SECCION EXTRACCION DE INFORMACION CLAVE -->
+    <div class="seccion">
+        <div class="contenedor">
+            <div class="texto">
+                <h3>Extracción de información clave</h3>
+                <p class="descripcion">Finalmente obtenemos la información clave, con la tipología del cliente y el quintil al que 
+                    pertenecen, sabemos quién aporta a la empresa de manera significativa, no solo en valores monetarios, sino 
+                    activamente los últimos meses, a estos clientes se les debe mantener fieles, a los clientes que están por 
+                    abandonar la empresa se les debe fidelizar con nuevos incentivos, y a los que han abandonado se les debe 
+                    atraer nuevamente, en un nuevo análisis se puede identificar la causa de su abandono con un modelo de minería 
+                    de dados mediante encuestas, para una mejor visualización adjuntamos el (<a href="proyecto2.html">archivo de python en formato .ipynb</a>).</p>
+                </div>
+            <img src="img/p5.png" alt="Imagen descriptiva">
+        </div>
+    </div>
+    <!--SECCION FOOTER-->
+    <footer>
+        <a href="#inicio" class="arriba">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+        <div class="redes">
+            <a href="https://www.facebook.com/joseluis.romero.1614?locale=es_LA" target="_blank"><i
+                    class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://x.com/JoseL_RomeroC" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/jos%C3%A9-luis-romero-capa-691740167/" target="_blank"><i
+                    class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
